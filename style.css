@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Inter:wght@400;500;800&family=Monomaniac+One&display=swap');
+/* ---------------------------------------------------------Main */
+*{
+    margin: 0;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #0B0B0B;
+}
+section h1 {
+  font-family: 'Monomaniac one', sans-serif;
+  font-size: 2vw;
+  text-align: center;
+}
+/* ---------------------------------------------------------Nav */
+nav {
+    background-color: black;
+    text-decoration: none;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 2px 2px 9px 3px rgba(0, 0, 0, 0.68);
+}
+nav img {
+    width: 8vw;
+    margin-left: 5vw;
+    align-self: center;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: 30vw;
+}
+nav li {
+    margin-right: 4vw;
+    align-self: center;
+    padding: 10px;
+}
+.underline-animation {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  .underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  /* ---------------------------------------------------------Header */
+  .image {
+    background-image: url(assets/Band.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+  }
+  .image img {
+    filter: drop-shadow(7px 11px 4px  rgba(0, 0, 0, 0.68));
+    width: 40vw;
+  }
+
+  /* ---------------------------------------------------------Section 1 */
+  section#about {
+    display: flex;
+  }
+  section#about img {
+    width: 26vw;
+    margin: 4vh 6vw;
+    border-radius: 20px;
+    box-shadow: 8px 10px 0px 0px #494949;
+  }
+  section#about article {
+    margin-left: 5vw;
+    margin-top: 5vh;
+  }
+
+
+  section p {
+    text-align: justify;
+  } 
+/* ---------------------------------------------------------Section 2 */
+section#musics {
+  background-color: #191919;
+}
+#musicas {
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+  overflow-x: scroll;
+  padding: 20px;
+}
+#musicas::-webkit-scrollbar {
+  height: 10px;
+}
+
+#musicas::-webkit-scrollbar-track {
+  background-color: #3f3f3f;
+  border-radius: 20px;
+}
+#musicas::-webkit-scrollbar-thumb{
+  background-color: #9122C7;
+  border-radius: 20px;
+}
+#musicas::-webkit-scrollbar-thumb:hover{
+  background-color: #831eb5;
+}
+.music {
+  background-color: #555555;
+  border-radius: 20px;
+  width: 17vw;
+  text-align: center;
+}
+.music:hover {
+  cursor: pointer;
+  background-color: #3f3f3f;
+}
+.music img {
+  width: 17vw;
+  border-radius: 20px 20px 0 0;
+  margin-bottom: 2vh;
+}
+.music h2 {
+  margin-bottom: 2vh;
+}
+/* ---------------------------------------------------------Section 3 */
+#insideS {
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  overflow-x: scroll;
+}
+.show h2 {
+  font-family: 'IMB Plex Mono', monospace;
+  font-size:xx-large;
+}
+.show p {
+  margin-top: 7px;
+}
+.show {
+  background-color: #2c2c2c;
+  border-radius: 20px;
+  padding: 20px;
+  padding-right: 5vw;
+  margin-bottom: 10px;
+}
+#insideS::-webkit-scrollbar {
+  height: 10px;
+}
+
+#insideS::-webkit-scrollbar-track {
+  background-color: #3f3f3f;
+  border-radius: 20px;
+}
+#insideS::-webkit-scrollbar-thumb{
+  background-color: #9122C7;
+  border-radius: 20px;
+}
+#insideS::-webkit-scrollbar-thumb:hover{
+  background-color: #831eb5;
+}
