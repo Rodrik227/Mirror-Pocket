@@ -10,16 +10,18 @@ const musics = [
 
 // Colocar as infos do show aqui embaixo como no irei explicar
 const shows = [
-    {
-        Name: "Ensaio Aberto",
-        Data: "20/06/23",
-        Time: "20:30",
-        LocalS: "heilige Pocket",
-        Street: "Marechal deodoro 6969",
-        Block: "Centro",
-        City: "Santa Cruz do Sul",
-        Value: 299mn 
-    }
+    // {
+    //     Name: "Ensaio Aberto",
+    //     Data: "20/06/23",
+    //     Time: "20:30",
+    //     LocalS: "heilige Pocket",
+    //     Street: "Marechal deodoro 6969",
+    //     Block: "Centro",
+    //     City: "Santa Cruz do Sul",
+    //     Value: 299,
+    //     Cents: 50
+    // },
+
 ]
 
 shows.forEach((show)=> {
@@ -28,29 +30,46 @@ shows.forEach((show)=> {
     const title = document.createElement('h2')
     const time = document.createElement('p')
     const place = document.createElement('p')
-    const value = document.createElement('p')
+    const valueF = document.createElement('p')
+    let value = null
 
     console.log('injecting shows')
     div.classList.add('show')
     title.innerHTML = show.Name
     time.innerHTML = `Data:${show.Data}<br>Às ${show.Time}`
-    place.innerHTML = `Local:<br>${show.LocalS}<br>${show.Street} - ${show.Block}<br>${show.city}`
+    place.innerHTML = `Local:<br>${show.LocalS}<br>${show.Street} - ${show.Block}<br>${show.City}`
     
     console.log('indentifing value')
     if (show.Value == 'none') {
-        value.innerHTML = 'Gratuito'
+        value = 'Gratuito'
         console.log('value free')
     } else if (typeof show.Value === "number") {
-        value.innerHTML = `R$${show.Value}`
+        value = `R$${show.Value},${show.Cents}`
         console.log('value number')
     }else if (typeof show.Value === "string") {
-        value.innerHTML = show.Value
+        value = show.Value
         console.log('value other')
     }else {
         console.error('Valor não indentificado')
     }
+
     
+    valueF.innerHTML = `Entrada:<br>${value}`
+    
+    div.appendChild(title)
+    div.appendChild(time)
+    div.appendChild(place)
+    div.appendChild(valueF)
+
+    document.getElementById('insideS').appendChild(div)
 })
+if(shows.length === 0) {
+    const no = document.createElement('p')
+
+    no.classList.add('message')
+    no.innerHTML = 'Parece quenão temos nada marcado, mas logo resolvemos isso'
+    document.getElementById('insideS').appendChild(no)
+}
 
 musics.forEach((music)=> {
     console.log('loading musics')

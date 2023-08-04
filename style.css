@@ -165,6 +165,10 @@ section#musics {
   padding-right: 5vw;
   margin-bottom: 10px;
 }
+.message {
+  margin: 15vh 0vw;
+  color: #6d6d6d;
+}
 #insideS::-webkit-scrollbar {
   height: 10px;
 }
