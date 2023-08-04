@@ -4,12 +4,18 @@ const musics = [
     Name: "KITTEN",
     Img: 'kiten.png',
     Link: "https://youtu.be/acpiNz0mx8E"
-}
+},
+{
+    Name: "Winter Night",
+    Img: 'kiten.png',
+    Link: "https://youtu.be/erYZAS5brLg?list=OLAK5uy_kS8FXUWYbwOzkl54I9ouW0Wm2Lz0ApH2Q"
+},
 ]
 
 
 // Colocar as infos do show aqui embaixo como no irei explicar
-const shows = [
+// Na area de valor, caso for de graça escrever null caso for outro valor escrever por exemplo '1kg de alimento'
+// se for um número apenas escreva sem ''
     // {
     //     Name: "Ensaio Aberto",
     //     Data: "20/06/23",
@@ -18,10 +24,38 @@ const shows = [
     //     Street: "Marechal deodoro 6969",
     //     Block: "Centro",
     //     City: "Santa Cruz do Sul",
-    //     Value: 299,
+    //     Value: null,/29,/'1kg de alimento',
     //     Cents: 50
+    //      Link: null,/'https://youtube.com',
+    //      Button: 'Comprar'
     // },
-
+const shows = [
+    {
+        Name: "Ensaio Aberto",
+        Data: "20/06/23",
+        Time: "20:30",
+        LocalS: "heilige Pocket",
+        Street: "Marechal deodoro 6969",
+        Block: "Centro",
+        City: "Santa Cruz do Sul",
+        Value:29,
+        Cents: 50,
+        Link: 'https://youtube.com',
+        Button: 'Comprar'
+    },
+        {
+        Name: "Ensaio Aberto",
+        Data: "20/06/23",
+        Time: "20:30",
+        LocalS: "heilige Pocket",
+        Street: "Marechal deodoro 6969",
+        Block: "Centro",
+        City: "Santa Cruz do Sul",
+        Value: null,
+        Cents: 50,
+        Link: null,
+        Button: 'Comprar'
+    },
 ]
 
 shows.forEach((show)=> {
@@ -40,7 +74,7 @@ shows.forEach((show)=> {
     place.innerHTML = `Local:<br>${show.LocalS}<br>${show.Street} - ${show.Block}<br>${show.City}`
     
     console.log('indentifing value')
-    if (show.Value == 'none') {
+    if (show.Value == null) {
         value = 'Gratuito'
         console.log('value free')
     } else if (typeof show.Value === "number") {
@@ -52,8 +86,7 @@ shows.forEach((show)=> {
     }else {
         console.error('Valor não indentificado')
     }
-
-    
+  
     valueF.innerHTML = `Entrada:<br>${value}`
     
     div.appendChild(title)
@@ -61,14 +94,26 @@ shows.forEach((show)=> {
     div.appendChild(place)
     div.appendChild(valueF)
 
+    if (typeof show.Link === "string") {
+        const link = document.createElement('a')
+ 
+        link.innerHTML = show.Button
+        link.href = show.Link
+
+        div.appendChild(link)
+     }
+
     document.getElementById('insideS').appendChild(div)
+
+
 })
 if(shows.length === 0) {
     const no = document.createElement('p')
 
     no.classList.add('message')
-    no.innerHTML = 'Parece quenão temos nada marcado, mas logo resolvemos isso'
+    no.innerHTML = 'Parece que não temos nada marcado... Por enquanto'
     document.getElementById('insideS').appendChild(no)
+    
 }
 
 musics.forEach((music)=> {
